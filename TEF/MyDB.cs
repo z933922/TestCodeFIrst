@@ -1,28 +1,25 @@
-﻿namespace EF2
+﻿namespace TEF
 {
     using System;
     using System.Data.Entity;
     using System.Linq;
 
-    public class MyModel2 : DbContext
+    public class MyDB : DbContext
     {
         //您的上下文已配置为从您的应用程序的配置文件(App.config 或 Web.config)
-        //使用“Model1”连接字符串。默认情况下，此连接字符串针对您的 LocalDb 实例上的
-        //“EF2.Model1”数据库。
+        //使用“MyDB”连接字符串。默认情况下，此连接字符串针对您的 LocalDb 实例上的
+        //“TEF.MyDB”数据库。
         // 
-        //如果您想要针对其他数据库和/或数据库提供程序，请在应用程序配置文件中修改“Model1”
+        //如果您想要针对其他数据库和/或数据库提供程序，请在应用程序配置文件中修改“MyDB”
         //连接字符串。
-        public MyModel2()
+        public MyDB()
             : base("name=MyDB")
         {
         }
 
-        //为您要在模型中包含的每种实体类型都添加 DbSet。有关配置和使用 Code First  模型
-        //的详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=390109。
 
-        // public virtual DbSet<MyEntity> MyEntities { get; set; }
         public virtual DbSet<M1> M1shiti { get; set; }
-       public virtual DbSet<M2> M2shiti { get; set; }
+        public virtual DbSet<M2> M2shiti { get; set; }
 
         public virtual DbSet<M3> M3shiti { get; set; }
 
@@ -46,6 +43,12 @@
                .WithRequired(e => e.M1Model)
                .HasForeignKey(e => e.M1Id);
         }
+
+
+        //为您要在模型中包含的每种实体类型都添加 DbSet。有关配置和使用 Code First  模型
+        //的详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=390109。
+
+        // public virtual DbSet<MyEntity> MyEntities { get; set; }
     }
 
     //public class MyEntity

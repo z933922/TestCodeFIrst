@@ -212,7 +212,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -221,10 +223,6 @@
     <ProjectReference Include="..\EF2\EF2.csproj">
       <Project>{e892dfd8-10b1-41b2-9abc-de5783bb5d7d}</Project>
       <Name>EF2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EF\EF.csproj">
-      <Project>{875fcd24-adc0-4d19-82d1-2b2bf345e9ce}</Project>
-      <Name>EF</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

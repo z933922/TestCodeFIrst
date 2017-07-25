@@ -49,37 +49,37 @@ namespace WebApplication1.Controllers
             //    db.SaveChanges();
             //}
 
-            T3 t3 = new T3();
-            t3.Name = "你是sb";
-            t3.ParentId = 1;
+            //T3 t3 = new T3();
+            //t3.Name = "你是sb";
+            //t3.ParentId = 1;
 
-            T4 t4 = new T4();
-            t4.T3Id = 1;
+            //T4 t4 = new T4();
+            //t4.T3Id = 1;
 
-            T3 tt33 = new T3();
-
-
-            
+            //T3 tt33 = new T3();
 
 
-            using (MyModel2 my = new MyModel2())
-            {
-                tt33 = my.T3shiti.Where(c => c.Id == 2).ToList().FirstOrDefault();
-            }
 
 
-            
 
-            JsonSerializerSettings setting = new JsonSerializerSettings()
-            {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-                Formatting = Formatting.None
-            };
-            var ret = JsonConvert.SerializeObject(tt33, setting);
-            return Json(ret, JsonRequestBehavior.AllowGet);
-         //   return Json(tt33, JsonRequestBehavior.AllowGet);
+            //using (MyModel2 my = new MyModel2())
+            //{
+            //    tt33 = my.T3shiti.Where(c => c.Id == 2).ToList().FirstOrDefault();
+            //}
 
-            
+
+
+
+            //JsonSerializerSettings setting = new JsonSerializerSettings()
+            //{
+            //    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            //    Formatting = Formatting.None
+            //};
+            //var ret = JsonConvert.SerializeObject(tt33, setting);
+            //return Json(ret, JsonRequestBehavior.AllowGet);
+            //   return Json(tt33, JsonRequestBehavior.AllowGet);
+
+
             //using (TransactionScope scope = new TransactionScope())
             //{
             //    //Do something with context1  
@@ -97,6 +97,8 @@ namespace WebApplication1.Controllers
             //    context2.AcceptAllChanges();
 
             //}
+
+            return View();
             
         }
     }
