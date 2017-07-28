@@ -23,6 +23,8 @@
 
         public virtual DbSet<M3> M3shiti { get; set; }
 
+        // 实体千万不要复制啥的 很容易出错，还是自己老老实实的写吧
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<M1>()
